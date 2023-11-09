@@ -1,0 +1,3 @@
+name = "" # todo
+main = "./out/main.js"
+compatibility_date = "2022-10-10"

@@ -1,0 +1,22 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src/dev"
+  "src/main"
+  "src/test"]
+
+ :dependencies
+ []
+
+ :builds
+ {:worker
+  {:target :esm
+   :output-dir "cljs-worker/out"
+   :modules
+   {:main
+    {:exports {default my.app.demo-worker/example}}}
+
+   ;; runtime doesn't allow creation of websockets outside of request handler
+   ;; also complains about eval
+   :devtools
+   {:enabled false}
+   }}}
